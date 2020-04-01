@@ -11,21 +11,17 @@ GAME RULES:
 
 var scores, roundScore, activePlayer, gamePlaying;
 
-scores = [0, 0];
-roundScore = 0;
-activePlayer = 0;
+// Start the game
+init();
+
 
 // document.querySelector(".dice").style.display = "none";
 
-//2. Display the result
-document.getElementById("score-0").textContent = "0";
-document.getElementById("score-1").textContent = "0";
-document.getElementById("current-0").textContent = "0";
-document.getElementById("current-1").textContent = "0";
 
 
 
-// Start the game
+
+
 
 document.querySelector(".btn-roll").addEventListener("click", function() {
   var dice = Math.floor(Math.random() * 6) + 1;
@@ -80,3 +76,19 @@ document.querySelector('#score-' + activePlayer).textContent = scores[activePlay
     document.querySelector(".dice").style.display = "none";
    
 }
+
+
+function init (){
+  scores = [0, 0];
+  roundScore = 0;
+  activePlayer = 0;
+
+  //2. Display the result
+document.getElementById("score-0").textContent = "0";
+document.getElementById("score-1").textContent = "0";
+document.getElementById("current-0").textContent = "0";
+document.getElementById("current-1").textContent = "0";
+  }
+
+
+document.querySelector('.btn-new').addEventListener('click', init);
